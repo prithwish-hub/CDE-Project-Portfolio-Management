@@ -1,0 +1,5 @@
+INSERT INTO users(id,username,password) VALUES('fa64b5ec-be86-48ca-ba3b-185d06038fe2','Prithwish','$2a$10$UJOBBLi5Q6d4lyMZ/dBJ6.P31K/CLMPq1zUtpSrDOOxcvkVkMrh6S')
+INSERT INTO users(id,username,password) VALUES('de7e6090-c9c8-42e9-a658-e5465d29b0fe','TestUser1','$2a$10$aZaafM8t60LHySOfQcaFQuP8xvPLA8E68HM/bWbasQbVlVbU18YkW')
+INSERT INTO users(id,username,password) VALUES('9a452caf-59fd-4fa0-9b76-217ffe7ab716','TestUser2','$2a$10$sIRu8OCPW/qRjdCGlQlyzO0IfLSbwuxDQAJ7ntupKnpfwZDe.vmq6')
+INSERT INTO users(id,username,password) VALUES('b738d538-aa6d-4ecb-9144-c79823b5c911','TestUser3','$2a$10$Ez8iAYqW2NTv5zMOnyMTYO8WsSoYj5au2VzVMgKG/2ErlStUVHU6.')
+INSERT INTO users(id,username,password) VALUES('7ee46bf2-bb2a-4aed-bcef-7f49639527e3','TestUser4','$2a$10$ynZIat/TWQ0MYfnkigvNE.JZMu0.tX8rTcZKoGBddvpjDqZamLqoe')

@@ -1,0 +1,47 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  z-index: 100;
+}
+
+.alert-modal {
+  position: fixed;
+  top: 30vh;
+  left: 70vh;
+  width: 40vw;
+  padding: 16px;
+  z-index: 200;
+  border-radius: 10px;
+  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+.alert-modal-success {
+  background: rgb(217, 252, 215);
+}
+
+.alert-modal-error {
+  background: rgb(252, 215, 215);
+}
+
+.alert-modal_avatar {
+  margin: auto 0px;
+  text-align: center;
+}
+
+.alert-modal_avatar-success {
+  font-size: 100px;
+  color: rgb(91, 251, 85);
+}
+
+.alert-modal_avatar-error {
+  font-size: 100px;
+  color: rgb(250, 116, 116);
+}
+
+.alert-modal_actions {
+  text-align: right;
+}

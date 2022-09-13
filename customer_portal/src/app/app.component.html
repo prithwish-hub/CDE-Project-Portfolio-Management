@@ -1,0 +1,4 @@
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
+<app-alert-modal [message]="error" mode="error" *ngIf="error" (close)="handleError()">
+</app-alert-modal>

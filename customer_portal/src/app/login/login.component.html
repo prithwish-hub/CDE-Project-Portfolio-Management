@@ -1,0 +1,50 @@
+<app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+<app-alert-modal
+  [message]="error"
+  mode="error"
+  *ngIf="error"
+  (close)="handleError()"
+></app-alert-modal>
+<div class="login-form card fb-shadow" *ngIf="!isLoading">
+  <div class="login-form_avatar">
+    <span class="material-icons">account_circle</span>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title text-center fw-bold text-uppercase">
+      Login to your account
+    </h5>
+  </div>
+  <div class="card-body">
+    <form class="row g-3" [formGroup]="loginInputs" (ngSubmit)="onSubmit()">
+      <div class="input-group input-group-lg">
+        <span class="input-group-text" for="username">
+          <span class="material-icons">person</span>
+        </span>
+        <input
+          id="username"
+          type="text"
+          class="form-control"
+          placeholder="Username"
+          formControlName="username"
+        />
+      </div>
+      <div class="input-group input-group-lg">
+        <span class="input-group-text" for="password">
+          <span class="material-icons">lock</span>
+        </span>
+        <input
+          id="password"
+          type="password"
+          class="form-control"
+          placeholder="Password"
+          formControlName="password"
+        />
+      </div>
+      <div class="login-form_button mb-3 text-center">
+        <button class="btn btn-primary btn-lg text-uppercase" type="submit">
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+.service-card {
+  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+.service-card_link {
+  text-decoration: none;
+}
+
+.service-card_link span {
+  font-size: 48px;
+  color: #0d6efd;
+}

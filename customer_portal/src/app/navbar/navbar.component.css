@@ -1,0 +1,11 @@
+.navbar-user_avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-user_avatar span {
+  margin-right: 2px;
+  color: #0d6efd;
+  font-size: 26px;
+}

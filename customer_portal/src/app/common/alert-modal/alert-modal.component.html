@@ -1,0 +1,17 @@
+<div class="backdrop" (click)="onClose()"></div>
+<div
+  class="alert-modal fb-shadow"
+  [class.alert-modal-error]="mode == 'error'"
+  [class.alert-modal-success]="mode == 'success'"
+>
+  <div class="alert-modal_avatar" *ngIf="mode == 'error'">
+    <span class="material-icons alert-modal_avatar-error">error</span>
+  </div>
+  <div class="alert-modal_avatar" *ngIf="mode == 'success'">
+    <span class="material-icons alert-modal_avatar-success">verified</span>
+  </div>
+  <h5 class="text-center">{{ message }}</h5>
+  <div class="alert-modal_actions">
+    <button class="btn btn-primary" (click)="onClose()">Close</button>
+  </div>
+</div>

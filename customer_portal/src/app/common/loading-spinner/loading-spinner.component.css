@@ -1,0 +1,11 @@
+.load_spinner {
+  margin-top: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner-grow {
+  width: 10rem;
+  height: 10rem;
+}

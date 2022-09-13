@@ -1,0 +1,66 @@
+<nav
+  class="navbar navbar-expand-lg bg-light border border-top-0 border-start-0 border-end-0 border-3 border-primary"
+>
+  <div class="container">
+    <a class="navbar-brand text-uppercase" routerLink="/">
+      Portfolio<span class="text-primary fw-bold">Manager</span>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link text-uppercase"
+            routerLink="/home"
+            routerLinkActive="active"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link text-uppercase"
+            routerLink="/services"
+            routerLinkActive="active"
+            >Services</a
+          >
+        </li>
+      </ul>
+      <div class="navbar-nav ml-auto" *ngIf="!isAuthenticated">
+        <a class="btn btn-primary text-uppercase" routerLink="/login">
+          Login
+        </a>
+      </div>
+      <div class="navbar-nav ml-auto" *ngIf="isAuthenticated">
+        <div class="nav-item dropdown">
+          <a
+            class="nav-link navbar-user_avatar dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <span class="material-icons">person</span>
+            {{ username }}
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <button class="dropdown-item" type="button" (click)="onLogout()">
+                Logout
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

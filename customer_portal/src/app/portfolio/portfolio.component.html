@@ -1,0 +1,107 @@
+<app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+<app-alert-modal
+  [message]="error"
+  mode="error"
+  (close)="handleError()"
+  *ngIf="error"
+></app-alert-modal>
+<div class="container" *ngIf="!isLoading">
+  <!-- ========== Content hero section start ========== -->
+  <div class="content_hero">
+    <p class="title">Your Portfolio Dashboard</p>
+    <p class="subtitle">
+      These are the complete details of your investments in stocks and mutual
+      funds
+    </p>
+  </div>
+  <!-- ========== Content hero section end ========== -->
+  <!-- ============================================== -->
+  <!-- ========== Net worth ,stock count and mf count start ========== -->
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4 mb-3">
+      <div class="card fb-shadow">
+        <div class="card-body">
+          <div class="icon float-end">
+            <span class="material-icons">currency_rupee</span>
+          </div>
+          <h5 class="text-muted fw-normal mt-0">Net Worth</h5>
+          <h3 class="mt-3 mb-2">&#8377;{{ netWorth | number: "1.2-2" }}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 mb-3">
+      <div class="card fb-shadow">
+        <div class="card-body">
+          <div class="icon float-end">
+            <span class="material-icons">trending_up</span>
+          </div>
+          <h5 class="text-muted fw-normal mt-0">No of stocks</h5>
+          <h3 class="mt-3 mb-2">{{ getNoOfStocks() }}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4 mb-3">
+      <div class="card fb-shadow">
+        <div class="card-body">
+          <div class="icon float-end">
+            <span class="material-icons">auto_graph</span>
+          </div>
+          <h5 class="text-muted fw-normal mt-0">No of mutual funds</h5>
+          <h3 class="mt-3 mb-2">{{ getNoOfMutualFunds() }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ========== Net worth ,stock count and mf count end ========== -->
+  <!-- ============================================== -->
+  <!-- ========== Stock and mutual fund tables start ========== -->
+  <div class="row">
+    <div class="col-xs-12 col-md-6 mb-3">
+      <div class="card fb-shadow mt-3">
+        <div class="card-body">
+          <h5 class="card-title text-primary">Stocks Investments</h5>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Stock Name</th>
+                <th scope="col">Unit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let stock of stocks; index as i">
+                <td>{{ i + 1 }}</td>
+                <td>{{ stock.stockName }}</td>
+                <td>{{ stock.stockCount }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6 mb-3">
+      <div class="card fb-shadow mt-3">
+        <div class="card-body">
+          <h5 class="card-title text-primary">Mutual Fund Investments</h5>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Mutual Fund Name</th>
+                <th scope="col">Unit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let mutualFund of mutualFunds; index as i">
+                <td>{{ i + 1 }}</td>
+                <td>{{ mutualFund.mutualFundName }}</td>
+                <td>{{ mutualFund.mutualFundUnits }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ========== Stock and mutual fund tables end ========== -->
+</div>

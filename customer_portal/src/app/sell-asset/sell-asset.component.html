@@ -1,0 +1,103 @@
+<app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+<app-alert-modal
+  [message]="error"
+  mode="error"
+  (close)="handleError()"
+  *ngIf="error"
+></app-alert-modal>
+<app-alert-modal
+  [message]="success"
+  mode="success"
+  *ngIf="success"
+  (close)="handleSuccess()"
+></app-alert-modal>
+<div class="container" *ngIf="!isLoading">
+  <div class="content_hero">
+    <p class="title">Seller Assets</p>
+    <p class="subtitle">Here you can sell your assets and make profit</p>
+  </div>
+  <div class="card fb-shadow">
+    <div class="card-body">
+      <h5 class="card-title">Your current holdings</h5>
+      <h6 class="card-subtitle mb-2 text-muted">
+        Select the amount of units you want to sell and click on the Sell button
+      </h6>
+    </div>
+    <div
+      class="alert alert-danger m-auto mb-4 w-75"
+      role="alert"
+      *ngIf="stocks.length == 0 && mutualFunds.length == 0"
+    >
+      <h4 class="alert-heading">Sorry you cannot sell assets!</h4>
+      <p>Currently you don't have any holdings in stocks or mutual funds</p>
+    </div>
+    <div
+      class="card-body mt-0 pt-0"
+      *ngIf="!(stocks.length == 0 && mutualFunds.length == 0)"
+    >
+      <form (ngSubmit)="onSubmit($event)">
+        <h5 class="card-title text-primary">Stocks Holdings</h5>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Stock Name</th>
+              <th scope="col">Unit (You have)</th>
+              <th scope="col">Unit (You want to sell)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let stock of stocks; index as i">
+              <td>{{ i + 1 }}</td>
+              <td>{{ stock.stockName }}</td>
+              <td>{{ stock.stockCount }}</td>
+              <td>
+                <input
+                  type="number"
+                  [min]="0"
+                  [max]="stock.stockCount"
+                  class="form-control"
+                  style="width: 5rem"
+                  name="stock_{{ i }}"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h5 class="card-title text-primary">Mutual Fund Holdings</h5>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Mutual Fund Name</th>
+              <th scope="col">Unit (You have)</th>
+              <th scope="col">Unit (You want to sell)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let mutualFund of mutualFunds; index as i">
+              <td>{{ i + 1 }}</td>
+              <td>{{ mutualFund.mutualFundName }}</td>
+              <td>{{ mutualFund.mutualFundUnits }}</td>
+              <td>
+                <input
+                  type="number"
+                  [min]="0"
+                  [max]="mutualFund.mutualFundUnits"
+                  class="form-control"
+                  style="width: 5rem"
+                  name="mf_{{ i }}"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">
+            Make Sell Request
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

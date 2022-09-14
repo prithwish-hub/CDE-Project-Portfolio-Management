@@ -33,9 +33,9 @@ Alternatively you can use the Spring Boot Maven plugin like so:
 ```bash
   mvn spring-boot:run
 ``` 
-authorizationMicroservice runs on localhost:8081
-dailySharePriceMicroservice runs on localhost:8082
-dailyMutualFundNAVMicroservice runs on localhost:8083
+authorizationMicroservice runs on localhost:8081 <br/>
+dailySharePriceMicroservice runs on localhost:8082 <br/>
+dailyMutualFundNAVMicroservice runs on localhost:8083 <br/>
 calculateNetworthMicroservice runs on localhost:8084
 
 
